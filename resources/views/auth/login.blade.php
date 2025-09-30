@@ -104,9 +104,15 @@
                             <strong>Belum punya akun?</strong><br>
                             Silakan hubungi admin untuk mendapatkan akun baru:
                         </div>
+
+                        @php
+                            $contact = \App\Models\Contact::getActive();
+                            $whatsappMessage = "Halo, saya ingin mendaftar akun baru untuk e-katalog PT. Batam General Supplier";
+                            $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                        @endphp
                         
                         <div class="d-flex gap-2">
-                            <a href="https://wa.me/6281234567890?text=Halo, saya ingin mendaftar akun baru untuk e-katalog PT. Batam General Supplier" 
+                            <a href=" {{ $whatsappUrl }} " 
                                class="btn btn-success flex-fill btn-sm" target="_blank">
                                 <i class="bi bi-whatsapp"></i> WhatsApp Admin
                             </a>

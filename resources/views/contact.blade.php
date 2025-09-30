@@ -13,7 +13,7 @@
 
     <div class="row">
         <!-- Contact Information -->
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-12 mb-4">
             <div class="card h-100">
                 <div class="card-body">
                     <h4 class="card-title fw-bold mb-4">
@@ -67,60 +67,6 @@
                             <i class="bi bi-envelope"></i> Email
                         </a>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title fw-bold mb-4">
-                        <i class="bi bi-chat-dots text-primary"></i> Kirim Pesan
-                    </h4>
-
-                    <div class="alert alert-info">
-                        <i class="bi bi-info-circle"></i> 
-                        Untuk pemesanan produk, silakan <strong>login</strong> terlebih dahulu atau hubungi kami langsung via WhatsApp.
-                    </div>
-
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nama Lengkap *</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Nomor Telepon</label>
-                            <input type="tel" class="form-control" id="phone">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subjek *</label>
-                            <select class="form-select" id="subject" required>
-                                <option value="">Pilih Subjek</option>
-                                <option value="informasi_produk">Informasi Produk</option>
-                                <option value="penawaran">Permintaan Penawaran</option>
-                                <option value="kerjasama">Kerjasama Bisnis</option>
-                                <option value="keluhan">Keluhan/Saran</option>
-                                <option value="lainnya">Lainnya</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Pesan *</label>
-                            <textarea class="form-control" id="message" rows="5" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="bi bi-send"></i> Kirim Pesan
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>

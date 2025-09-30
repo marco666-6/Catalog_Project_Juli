@@ -294,9 +294,14 @@
                 <div class="card-header">
                     <h6 class="mb-0"><i class="bi bi-headset"></i> Butuh Bantuan?</h6>
                 </div>
+                @php
+                    $contact = \App\Models\Contact::getActive();
+                    $whatsappMessage = "Halo, saya ingin bertanya tentang pesanan { $order->order_number }";
+                    $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                @endphp
                 <div class="card-body">
                     <p class="text-muted small mb-3">Hubungi admin untuk informasi lebih lanjut tentang pesanan ini.</p>
-                    <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang pesanan {{ $order->order_number }}" 
+                    <a href=" {{ $whatsappUrl }} " 
                        class="btn btn-success w-100 mb-2" target="_blank">
                         <i class="bi bi-whatsapp"></i> WhatsApp Admin
                     </a>

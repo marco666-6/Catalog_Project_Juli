@@ -63,7 +63,12 @@
                                         {{ $product->stock == 0 ? 'disabled' : '' }}>
                                     <i class="bi bi-cart-plus"></i> Tambah ke Keranjang
                                 </button>
-                                <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->name) }}" 
+                                @php
+                                    $contact = \App\Models\Contact::getActive();
+                                    $whatsappMessage = "Halo, saya tertarik dengan produk {$product->name}";
+                                    $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                                @endphp
+                                <a href="{{ $whatsappUrl }}" 
                                    class="btn btn-success btn-lg" target="_blank">
                                     <i class="bi bi-whatsapp"></i> WhatsApp
                                 </a>
@@ -78,7 +83,12 @@
                             <a href="{{ route('login') }}" class="btn btn-primary btn-lg flex-fill">
                                 <i class="bi bi-person-plus"></i> Login untuk Pesan
                             </a>
-                            <a href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan produk {{ urlencode($product->name) }}" 
+                            @php
+                                $contact = \App\Models\Contact::getActive();
+                                $whatsappMessage = "Halo, saya tertarik dengan produk {$product->name}";
+                                $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                            @endphp
+                            <a href="{{ $whatsappUrl }}" 
                                class="btn btn-success btn-lg" target="_blank">
                                 <i class="bi bi-whatsapp"></i> WhatsApp
                             </a>

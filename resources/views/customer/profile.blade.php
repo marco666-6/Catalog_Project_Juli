@@ -130,8 +130,13 @@
                 </div>
                 <div class="card-body">
                     <p class="text-muted small mb-3">Untuk mengubah password atau informasi keamanan lainnya, silakan hubungi admin.</p>
+                    @php
+                        $contact = \App\Models\Contact::getActive();
+                        $whatsappMessage = "Halo, saya ingin mengubah password akun {$user->username}";
+                        $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                    @endphp
                     <div class="d-grid gap-2">
-                        <a href="https://wa.me/6281234567890?text=Halo, saya ingin mengubah password akun {{ $user->username }}" 
+                        <a href=" {{ $whatsappUrl }} " 
                            class="btn btn-success btn-sm" target="_blank">
                             <i class="bi bi-whatsapp"></i> WhatsApp Admin
                         </a>

@@ -124,9 +124,15 @@
                             </button>
                         </form>
 
+                        @php
+                            $contact = \App\Models\Contact::getActive();
+                            $whatsappMessage = "Halo, saya ingin konsultasi tentang pesanan di keranjang saya";
+                            $whatsappUrl = $contact ? $contact->getWhatsAppUrl($whatsappMessage) : '#';
+                        @endphp
+
                         <!-- Contact Admin -->
                         <div class="mt-3">
-                            <a href="https://wa.me/6281234567890?text=Halo, saya ingin konsultasi tentang pesanan di keranjang saya" 
+                            <a href=" {{ $whatsappUrl }} " 
                                class="btn btn-success w-100" target="_blank">
                                 <i class="bi bi-whatsapp"></i> Konsultasi via WhatsApp
                             </a>
